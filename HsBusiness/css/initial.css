@@ -1,0 +1,30 @@
+a:link,a:visited{
+ text-decoration:none;
+}
+body p{margin: 0;
+padding: 0;
+font-family: "Microsoft Yahei";
+}
+.tu{width: 100%;
+	border:0;
+	}
+img{vertical-align:top}
+ul, ol, li,dl,dt,dd{
+	display:block;
+	margin: 0;
+    padding: 0;}
+option{
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari 和 Chrome */
+    appearance:none;
+}
+input,select{
+    box-sizing: border-box;
+}
+.Standard{
+	width: 98%;
+	min-width: 900px;
+	margin: 0 auto;
+	overflow: hidden;
+	clear: both;
+}

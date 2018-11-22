@@ -1,0 +1,201 @@
+body{
+	font-size: 12px;
+    color: #666;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+.red{
+	color: red
+}
+.gray{
+    color: gray
+}
+.green{
+    color: green
+}
+.blue{
+    color: blue
+}
+.widget-box {
+    background: none repeat scroll 0 0 #F9F9F9;
+    border-left: 1px solid #F0F8FF;
+    border-top: 1px solid #F0F8FF;
+    border-right: 2px solid #cdcdcd;
+    clear: both;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+.widget-title, .modal-header, .table th, div.dataTables_wrapper .ui-widget-header {
+    background: #EBEBEB;
+    border-bottom: 1px solid #F0F8FF;
+    overflow: hidden;
+}
+.widget-title span.icon {
+    padding: 7px 8px 7px 9px;
+    float: left;
+    border-right: 1px solid #F0F8FF;
+    width: 32px;
+    text-align: center;
+}
+.widget-title p {
+    color: #666;
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 12px;
+    height: 28px;
+    line-height: 38px;
+    margin: 0;
+}
+.nopadding {
+    padding: 0 !important;
+}
+.widget-content {
+    padding: 15px;
+    border-bottom: 2px solid #cdcdcd;
+}
+.nopadding .table-bordered {
+    border: 0;
+}
+.nopadding .table {
+	width: 100%;
+    margin-bottom: 0;
+}
+.table th {
+    height: auto;
+    font-size: 10px;
+    padding: 4px 0px 4px 4px;
+    border-bottom: 0;
+    text-align: center;
+    color: #666666;
+}
+.table.with-check tr th:first-child, .table.with-check tr td:first-child {
+    width: 20px;
+}
+div.checker {
+    margin-right: 0;
+}
+.widget-box tr td {
+    text-align: center;
+}
+.table-bordered th, .table-bordered td {
+    border-left: 1px solid #ddd;
+}
+.table th, .table td {
+    padding: 8px;
+    line-height: 20px;
+    border-top: 1px solid #ddd;
+}
+.control2{
+	overflow: hidden;
+	float: right;
+	padding: 16px 8px 16px 0;
+}
+.control2 button{
+	float: right;
+	margin-left: 7px;
+	height: 30px;
+    line-height: 30px;
+}
+.alink{
+    float: left;
+	margin-left: 7px;
+	height: 30px;
+    line-height: 30px;
+    margin-bottom: 8px;
+}
+
+.control1{
+	float: left;
+	padding: 16px 8px 8px 0;
+}
+.control1 button{
+	float: left;
+	margin-left: 7px;
+	height: 30px;
+    line-height: 30px;
+    margin-bottom: 8px;
+}
+.control1 select{
+	float: left;
+	margin-left: 7px;
+	width: 120px;
+	margin-bottom: 0;
+    margin-bottom: 8px;
+}
+.form-control.input-small {
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+select.input-small {
+    height: 30px;
+    line-height: 30px;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 38px;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border: 1px solid #A4D3EE;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+.search{
+	float: left;
+}
+.search input{
+	width: 120px;
+	height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    font-size: 10.5px;
+    margin: 0 0 0 7px;
+    border: 1px solid #A4D3EE;
+    margin-bottom: 8px;
+}
+.widget-content td button{
+	margin-left: 7px;
+}
+.operation{
+	width: 170px;
+}
+.alternate{
+    text-align: center;
+}
+input[type="checkbox"]{
+    margin-top: 0
+}
+input[readonly]{
+    background-color: #fff;
+}
+.given-table{
+    table-layout: fixed;
+}
+.given-th2,.given-th6{
+    width: 9%
+}
+.given-th1,.given-th4,.given-th5{
+    width: 9%
+}
+.given-th7{
+    width: 15%
+}
+.ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}

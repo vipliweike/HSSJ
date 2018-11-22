@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HsSj" Class="dbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=HsSj;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="HsSjConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ApiLog" Member="ApiLog">
+    <Type Name="ApiLog">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RequestName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Parameters" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ErrMsg" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ClientType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Visit" Member="Visit">
+    <Type Name="Visit">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IsNeed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsAgain" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NextTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisitTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VisitContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsLeader" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Leader" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Visit_BusRemind" Member="BusRemind" ThisKey="ID" OtherKey="VisitID" Type="BusRemind" />
+      <Association Name="Business_Visit" Member="Business" ThisKey="BusID" OtherKey="ID" Type="Business" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Users_Visit" Member="Users" ThisKey="UserID" OtherKey="ID" Type="Users" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Business" Member="Business">
+    <Type Name="Business">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Areas" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Industry" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CustomerScale" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Levels" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsMove" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MCardUse" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MPushWork" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MOperator" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MRatio" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MAgeGroup" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MIsSubsidy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MQuota" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MRange" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MPolicy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MOverTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MMonthFee" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MFocus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MIncome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MOtherWork" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsFixed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FPushWork" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FScale" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FBandWidth" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FIsDomain" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FPreWeekPrice" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FPreInNetMouth" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FPreAnlIncome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FOperator" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FUseWork" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FUseScale" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FUseBandWidth" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FWeekPrice" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FOverTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FAlsAnlIncome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FComputerNum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FIsSatisfy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FIsServer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FPlatform" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FOtherWork" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MState" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FState" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsRead" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyAddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsHavePhoneList" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MUnicom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MMobile" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MTelecom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Business_Visit" Member="Visit" ThisKey="ID" OtherKey="BusID" Type="Visit" />
+      <Association Name="Business_BusRemind" Member="BusRemind" ThisKey="ID" OtherKey="BusID" Type="BusRemind" />
+      <Association Name="Business_Contacts" Member="Contacts" ThisKey="ID" OtherKey="BusID" Type="Contacts" />
+      <Association Name="Users_Business" Member="Users" ThisKey="UserID" OtherKey="ID" Type="Users" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BusRemind" Member="BusRemind">
+    <Type Name="BusRemind">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Contents" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsRead" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReceiptTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisitID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Business_BusRemind" Member="Business" ThisKey="BusID" OtherKey="ID" Type="Business" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Visit_BusRemind" Member="Visit" ThisKey="VisitID" OtherKey="ID" Type="Visit" IsForeignKey="true" />
+      <Association Name="Users_BusRemind" Member="Users" ThisKey="UserID" OtherKey="ID" Type="Users" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Config" Member="Config">
+    <Type Name="Config">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Numerical" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EnlishName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Contacts" Member="Contacts">
+    <Type Name="Contacts">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Post" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Business_Contacts" Member="Business" ThisKey="BusID" OtherKey="ID" Type="Business" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dic" Member="Dic">
+    <Type Name="Dic">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Menu" Member="Menu">
+    <Type Name="Menu">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MenuName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Menu_RolesMenu" Member="RolesMenu" ThisKey="ID" OtherKey="MenuID" Type="RolesMenu" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OperateLog" Member="OperateLog">
+    <Type Name="OperateLog">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OperTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OperType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Operator" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Operdescribe" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PlContacts" Member="PlContacts">
+    <Type Name="PlContacts">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Post" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PlID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PrivateLine_PlContacts" Member="PrivateLine" ThisKey="PlID" OtherKey="ID" Type="PrivateLine" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PlRemind" Member="PlRemind">
+    <Type Name="PlRemind">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Contents" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ReceiptTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PlID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PlInfoID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PlVisitID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PlVisit_PlRemind" Member="PlVisit" ThisKey="PlVisitID" OtherKey="ID" Type="PlVisit" IsForeignKey="true" />
+      <Association Name="PrivateLine_PlRemind" Member="PrivateLine" ThisKey="PlID" OtherKey="ID" Type="PrivateLine" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="PlInfo_PlRemind" Member="PlInfo" ThisKey="PlInfoID" OtherKey="ID" Type="PlInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PlVisit" Member="PlVisit">
+    <Type Name="PlVisit">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IsNeed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsAgain" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisitTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PlID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisitContents" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NextTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsOther" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OtherDesc" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="PlVisit_PlRemind" Member="PlRemind" ThisKey="ID" OtherKey="PlVisitID" Type="PlRemind" />
+      <Association Name="PrivateLine_PlVisit" Member="PrivateLine" ThisKey="PlID" OtherKey="ID" Type="PrivateLine" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PrivateLine" Member="PrivateLine">
+    <Type Name="PrivateLine">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="CompanyAddress" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CompanyScale" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PrivateLine_PlContacts" Member="PlContacts" ThisKey="ID" OtherKey="PlID" Type="PlContacts" />
+      <Association Name="PrivateLine_PlRemind" Member="PlRemind" ThisKey="ID" OtherKey="PlID" Type="PlRemind" />
+      <Association Name="PrivateLine_PlVisit" Member="PlVisit" ThisKey="ID" OtherKey="PlID" Type="PlVisit" />
+      <Association Name="PrivateLine_PlInfo" Member="PlInfo" ThisKey="ID" OtherKey="PlID" Type="PlInfo" />
+      <Association Name="Users_PrivateLine" Member="Users" ThisKey="UserID" OtherKey="ID" Type="Users" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Project" Member="Project">
+    <Type Name="Project">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Areas" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Introduce" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Instruction" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsRead" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Project_ProRead" Member="ProRead" ThisKey="ID" OtherKey="ProID" Type="ProRead" />
+      <Association Name="Project_ProRemind" Member="ProRemind" ThisKey="ID" OtherKey="ProID" Type="ProRemind" />
+      <Association Name="Project_ProVisit" Member="ProVisit" ThisKey="ID" OtherKey="ProID" Type="ProVisit" />
+      <Association Name="Users_Project" Member="Users" ThisKey="UserID" OtherKey="ID" Type="Users" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProRead" Member="ProRead">
+    <Type Name="ProRead">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsRead" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Project_ProRead" Member="Project" ThisKey="ProID" OtherKey="ID" Type="Project" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProRemind" Member="ProRemind">
+    <Type Name="ProRemind">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RemindContents" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ReceiptTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProVisitID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Project_ProRemind" Member="Project" ThisKey="ProID" OtherKey="ID" Type="Project" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="ProVisit_ProRemind" Member="ProVisit" ThisKey="ProVisitID" OtherKey="ID" Type="ProVisit" IsForeignKey="true" />
+      <Association Name="Users_ProRemind" Member="Users" ThisKey="UserID" OtherKey="ID" Type="Users" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProVisit" Member="ProVisit">
+    <Type Name="ProVisit">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisitContents" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NextTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisitTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ProVisit_ProRemind" Member="ProRemind" ThisKey="ID" OtherKey="ProVisitID" Type="ProRemind" />
+      <Association Name="Project_ProVisit" Member="Project" ThisKey="ProID" OtherKey="ID" Type="Project" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Users_ProVisit" Member="Users" ThisKey="UserID" OtherKey="ID" Type="Users" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Region" Member="Region">
+    <Type Name="Region">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Pid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reports" Member="Reports">
+    <Type Name="Reports">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Rank" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Grids" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Month" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="StockIncome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NewIncome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TotalIncome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="StockIncomeRate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="R0Aims" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="R0CompleteRate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="R2Aims" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="R2CompleteRate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roles" Member="Roles">
+    <Type Name="Roles">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Roles_RolesMenu" Member="RolesMenu" ThisKey="ID" OtherKey="RolesID" Type="RolesMenu" />
+      <Association Name="Roles_Users" Member="Users" ThisKey="ID" OtherKey="RoleID" Type="Users" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RolesMenu" Member="RolesMenu">
+    <Type Name="RolesMenu">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RolesID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MenuID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Menu_RolesMenu" Member="Menu" ThisKey="MenuID" OtherKey="ID" Type="Menu" IsForeignKey="true" />
+      <Association Name="Roles_RolesMenu" Member="Roles" ThisKey="RolesID" OtherKey="ID" Type="Roles" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SmaBaRead" Member="SmaBaRead">
+    <Type Name="SmaBaRead">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SmBaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsRead" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SmallBalance_SmaBaRead" Member="SmallBalance" ThisKey="SmBaID" OtherKey="ID" Type="SmallBalance" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SmaBaRemind" Member="SmaBaRemind">
+    <Type Name="SmaBaRemind">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReceiptTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ReceiptContent" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SmBaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SmallBalance_SmaBaRemind" Member="SmallBalance" ThisKey="SmBaID" OtherKey="ID" Type="SmallBalance" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SmallBalance" Member="SmallBalance">
+    <Type Name="SmallBalance">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AccessNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Responsibility" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Balance" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="GroupID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NetTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WeekPrice" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Broadband" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InstalledAddress" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Contacts" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ContactTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SmallBalance_SmaBaRead" Member="SmaBaRead" ThisKey="ID" OtherKey="SmBaID" Type="SmaBaRead" />
+      <Association Name="SmallBalance_SmaBaRemind" Member="SmaBaRemind" ThisKey="ID" OtherKey="SmBaID" Type="SmaBaRemind" />
+      <Association Name="Users_SmallBalance" Member="Users" ThisKey="UserID" OtherKey="ID" Type="Users" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Store" Member="Store">
+    <Type Name="Store">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StoreName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Broadband" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Price" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OverTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ContactName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ContactTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="StoreAddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OtherNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Store_StoreRemind" Member="StoreRemind" ThisKey="ID" OtherKey="StoreID" Type="StoreRemind" />
+      <Association Name="Store_StoreVisit" Member="StoreVisit" ThisKey="ID" OtherKey="StoreID" Type="StoreVisit" />
+      <Association Name="Users_Store" Member="Users" ThisKey="UserID" OtherKey="ID" Type="Users" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StoreRemind" Member="StoreRemind">
+    <Type Name="StoreRemind">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Contents" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ReceiptTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StoreID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StoreVisitID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Store_StoreRemind" Member="Store" ThisKey="StoreID" OtherKey="ID" Type="Store" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="StoreVisit_StoreRemind" Member="StoreVisit" ThisKey="StoreVisitID" OtherKey="ID" Type="StoreVisit" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StoreVisit" Member="StoreVisit">
+    <Type Name="StoreVisit">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IsNeed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsAgain" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NextTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VisitTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VisitContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="VisitImg" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StoreID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="StoreVisit_StoreRemind" Member="StoreRemind" ThisKey="ID" OtherKey="StoreVisitID" Type="StoreRemind" />
+      <Association Name="Store_StoreVisit" Member="Store" ThisKey="StoreID" OtherKey="ID" Type="Store" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="Users">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Pwd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Areas" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Grids" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Post" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RoleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HeadImg" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Users_Visit" Member="Visit" ThisKey="ID" OtherKey="UserID" Type="Visit" />
+      <Association Name="Users_Business" Member="Business" ThisKey="ID" OtherKey="UserID" Type="Business" />
+      <Association Name="Users_BusRemind" Member="BusRemind" ThisKey="ID" OtherKey="UserID" Type="BusRemind" />
+      <Association Name="Users_PrivateLine" Member="PrivateLine" ThisKey="ID" OtherKey="UserID" Type="PrivateLine" />
+      <Association Name="Users_Project" Member="Project" ThisKey="ID" OtherKey="UserID" Type="Project" />
+      <Association Name="Users_ProRemind" Member="ProRemind" ThisKey="ID" OtherKey="UserID" Type="ProRemind" />
+      <Association Name="Users_ProVisit" Member="ProVisit" ThisKey="ID" OtherKey="UserID" Type="ProVisit" />
+      <Association Name="Users_SmallBalance" Member="SmallBalance" ThisKey="ID" OtherKey="UserID" Type="SmallBalance" />
+      <Association Name="Users_Store" Member="Store" ThisKey="ID" OtherKey="UserID" Type="Store" />
+      <Association Name="Users_Arrears" Member="Arrears" ThisKey="ID" OtherKey="UserID" Type="Arrears" />
+      <Association Name="Users_ArrRead" Member="ArrRead" ThisKey="ID" OtherKey="UserID" Type="ArrRead" />
+      <Association Name="Roles_Users" Member="Roles" ThisKey="RoleID" OtherKey="ID" Type="Roles" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Version" Member="Version">
+    <Type Name="Version">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VersionType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VersionName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DownUrl" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="VersionInfo" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IsForced" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VersionCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VPLVisitNum" Member="VPLVisitNum">
+    <Type Name="VPLVisitNum">
+      <Column Name="PlID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VVisitNum" Member="VVisitNum">
+    <Type Name="VVisitNum">
+      <Column Name="BusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PlInfo" Member="PlInfo">
+    <Type Name="PlInfo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Operator" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WeekPrice" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BandWidth" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PayType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OverTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PlID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ServerBerSys" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ServerUsingTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsCloudPlan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PlInfo_PlRemind" Member="PlRemind" ThisKey="ID" OtherKey="PlInfoID" Type="PlRemind" />
+      <Association Name="PrivateLine_PlInfo" Member="PrivateLine" ThisKey="PlID" OtherKey="ID" Type="PrivateLine" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Arrears" Member="Arrears">
+    <Type Name="Arrears">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InNetTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserTypeItem" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Period" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InstalledAddress" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ContactTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ServiceStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AmountOwed" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Payment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Area" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Arrears_ArrRemind" Member="ArrRemind" ThisKey="ID" OtherKey="ArrID" Type="ArrRemind" />
+      <Association Name="Arrears_ArrRead" Member="ArrRead" ThisKey="ID" OtherKey="ArrID" Type="ArrRead" />
+      <Association Name="Users_Arrears" Member="Users" ThisKey="UserID" OtherKey="ID" Type="Users" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ArrRemind" Member="ArrRemind">
+    <Type Name="ArrRemind">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReceiptTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ReceiptContent" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ArrID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Arrears_ArrRemind" Member="Arrears" ThisKey="ArrID" OtherKey="ID" Type="Arrears" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ArrRead" Member="ArrRead">
+    <Type Name="ArrRead">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ArrID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsRead" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Arrears_ArrRead" Member="Arrears" ThisKey="ArrID" OtherKey="ID" Type="Arrears" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Users_ArrRead" Member="Users" ThisKey="UserID" OtherKey="ID" Type="Users" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

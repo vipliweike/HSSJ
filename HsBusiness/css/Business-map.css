@@ -1,0 +1,48 @@
+.widget-box {
+    background: none repeat scroll 0 0 #F9F9F9;
+    border-left: 1px solid #F0F8FF;
+    border-top: 1px solid #F0F8FF;
+    border-right: 2px solid #cdcdcd;
+    clear: both;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+.widget-title, .modal-header, .table th, div.dataTables_wrapper .ui-widget-header {
+    background: #EBEBEB;
+    border-bottom: 1px solid #F0F8FF;
+    height: 36px;
+}
+.widget-title span.icon {
+    padding: 7px 8px 7px 9px;
+    float: left;
+    border-right: 1px solid #F0F8FF;
+}
+.widget-title p {
+    color: #666;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px;
+    line-height: 12px;
+    margin: 0;
+}
+.content{
+    margin-top: 20px;
+}
+.content-left{
+    float: left;
+}
+.content-right{
+    width: -webkit-calc(100% - 500px);
+    width: -moz-calc(100% - 500px);
+    width: calc(100% - 500px);
+    float: right;
+}
+.table th{
+    height: 0;
+}
+.widget-content {
+    padding: 15px;
+    border-bottom: 2px solid #cdcdcd;
+}

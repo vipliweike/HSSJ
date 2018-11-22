@@ -1,0 +1,99 @@
+body{
+	background-color: #2E363F;
+	background: url(../img/bg.png) no-repeat center top;
+	background-size: 100%
+}
+#loginbox {
+    overflow: hidden !important;
+    text-align: left;
+    position: relative;
+    margin-top: 8%;
+}
+#logo, #loginbox {
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding: 10px;
+    background-color:rgba(45,53,62,0.5);
+}
+#loginbox .normal_text {
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 30px;
+    background-color:rgba(45,53,62,0.5);
+    color: #B2DFEE;
+}
+#loginbox form#loginform {
+    z-index: 200;
+    display: block;
+}
+#loginbox form {
+    width: 100%;
+    background-color:rgba(45,53,62,0.5);
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.form-vertical {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#loginbox .control-group {
+    padding: 10px 0px 0px;
+    margin-bottom: 0px;
+}
+.control-label {
+    color: #B2DFEE;
+    padding-left: 10px;
+}
+#loginbox .controls {
+    padding: 0 0px;
+}
+#loginbox .main_input_box {
+    margin: 0 auto;
+    text-align: center;
+}
+#loginbox .main_input_box .add-on {
+    padding: 9px 9px;
+    color: #fff;
+    width: 30px;
+    display: inline-block;
+}
+.bg_lg {
+    background: #28b779;
+}
+#loginbox .main_input_box input {
+    height: 38px;
+    border-radius: 0px;
+    display: inline-block;
+    width: 85%;
+    margin-bottom: 1px;
+}
+#loginbox .control-group2 {
+    padding: 10px 0px 20px 0px;
+    margin-bottom: 0px;
+}
+.bg_ly {
+    background: #ffb848;
+}
+#loginbox .form-actions {
+    padding: 6px 4px 20px;
+}
+.form-actions {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background: none;
+    border-top: none;
+}
+.form-actions input{
+	width: 100%;
+	border-radius: 0;
+	height: 38px;
+}
+.Verification {
+    overflow: hidden;
+    clear: both;
+    padding: 0 10px;
+}
